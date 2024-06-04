@@ -2,9 +2,9 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors"
 import cookieParser from "cookie-parser";
-import db from "./config/database.config";
-import auth from "./routes/auth.route";
-
+import Auth from "./routes/auth.route";
+import User from "./routes/user.route";
+import UserAccount from "./routes/useraccount.route";
 dotenv.config();
 
 const app: Application = express();
@@ -20,7 +20,9 @@ app.use(cors(
 app.use(cookieParser())
 app.use(express.json())
 
-app.use(auth)
+app.use(Auth)
+app.use(User)
+app.use(UserAccount)
 
 app.listen(port, () => {
     console.log("Success")

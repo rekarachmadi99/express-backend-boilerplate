@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import { SignIn, SignUp } from "../controllers/auth.controller";
-const auth: Application = express();
+const Auth: Application = express();
 
-auth.get("/SignIn", SignIn);
-auth.get("/", SignUp)
-export default auth
+Auth.get("/SignIn", SignIn);
+Auth.get("/", SignUp)
+export default Auth
